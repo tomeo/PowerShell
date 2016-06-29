@@ -51,5 +51,11 @@ else {
 		`
 }
 
+Add-WindowsFeature NET-HTTP-Activation
+Add-WindowsFeature NET-WCF-HTTP-Activation45
+Add-WindowsFeature NET-WCF-MSMQ-Activation45
+Add-WindowsFeature NET-WCF-Pipe-Activation45
+Add-WindowsFeature NET-WCF-TCP-Activation45
+
 # List installed components
 Get-WindowsOptionalFeature -online | Where {$_.FeatureName -like 'IIS*'} | Sort FeatureName | Format-Table
