@@ -1,4 +1,4 @@
-# List of components http://stackoverflow.com/questions/37892173/automating-installation-of-iis/37893187#37893187
+﻿# List of components http://stackoverflow.com/questions/37892173/automating-installation-of-iis/37893187#37893187
 # If script is running on Windows Server
 if ((Get-WmiObject Win32_OperatingSystem).Name -like '*server*') {
 	Write-Host "Identified host as Windows Server" -ForegroundColor Yellow
