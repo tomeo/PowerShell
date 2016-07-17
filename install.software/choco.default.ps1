@@ -1,0 +1,13 @@
+﻿Install-Package boxstarter
+Install-Package msysgit
+Install-Package google-chrome-x64
+Install-Package launchy
+Install-Package skype
+Install-Package filezilla
+Install-Package sumatrapdf
+Install-Package 7zip
+Install-Package ccleaner
+Install-Package putty
+Install-Package spotify
+Install-Package atom
+Install-Package slack
