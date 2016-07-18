@@ -22,12 +22,17 @@ if ((Get-WmiObject Win32_OperatingSystem).Name -like '*server*') {
 		Web-Net-Ext45,
 		Web-WebSockets
 		`
+    Add-WindowsFeature NET-HTTP-Activation
+    Add-WindowsFeature NET-WCF-HTTP-Activation45
+    Add-WindowsFeature NET-WCF-MSMQ-Activation45
+    Add-WindowsFeature NET-WCF-Pipe-Activation45
+    Add-WindowsFeature NET-WCF-TCP-Activation45
 }
 # If script is running on regular Windows
 # This does not install NET 3.5
 else {
 	Write-Host "Identified host as Windows Standard" -ForegroundColor Yellow
-	Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName `
+	Enable-WindowsOptionalFeature -Online -NoRestart -All -FeatureName `
 		IIS-Webserver,
 		IIS-HttpRedirect,
 		IIS-ApplicationDevelopment,
@@ -49,14 +54,15 @@ else {
 		IIS-RequestMonitor,
 		IIS-WebSockets
 		`
-}
 
-Write-Host "Adding Windows features" -ForegroundColor Yellow
-Add-WindowsFeature NET-HTTP-Activation
-Add-WindowsFeature NET-WCF-HTTP-Activation45
-Add-WindowsFeature NET-WCF-MSMQ-Activation45
-Add-WindowsFeature NET-WCF-Pipe-Activation45
-Add-WindowsFeature NET-WCF-TCP-Activation45
+    Write-Host "Adding Windows features" -ForegroundColor Yellow
+    Enable-WindowsOptionalFeature -Online -All -FeatureName WCF-HTTP-Activation
+    Enable-WindowsOptionalFeature -Online -All -FeatureName WCF-HTTP-Activation45
+    Enable-WindowsOptionalFeature -Online -All -FeatureName WCF-TCP-Activation45
+    Enable-WindowsOptionalFeature -Online -All -FeatureName WCF-TCP-PortSharing45
+    Enable-WindowsOptionalFeature -Online -All -FeatureName WCF-Pipe-Activation45
+    Enable-WindowsOptionalFeature -Online -All -FeatureName WCF-MSMQ-Activation45
+} 
 
 Write-Host "Removing standard websites and application pools" -ForegroundColor Yellow
 Try {
