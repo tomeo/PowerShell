@@ -2,4 +2,5 @@
 # Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
 # Register chocolatey as package source
-Register-PackageSource -Name chocolatey -Location http://chocolatey.org/api/v2 -Provider PowerShellGet -Trusted -Force
+iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+choco install -y msysgit
