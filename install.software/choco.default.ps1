@@ -1,13 +1,11 @@
-﻿Install-Package boxstarter
-Install-Package msysgit
-Install-Package google-chrome-x64
-Install-Package launchy
-Install-Package skype
-Install-Package filezilla
-Install-Package sumatrapdf
-Install-Package 7zip
-Install-Package ccleaner
-Install-Package putty
-Install-Package spotify
-Install-Package atom
-Install-Package slack
+﻿choco install -y boxstarter
+choco install -y google-chrome-x64
+choco install -y launchy
+choco install -y skype
+choco install -y filezilla
+choco install -y sumatrapdf
+choco install -y 7zip
+choco install -y ccleaner
+choco install -y spotify
+choco install -y atom
+choco install -y slack
