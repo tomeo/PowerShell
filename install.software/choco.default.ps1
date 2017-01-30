@@ -9,3 +9,4 @@ choco install -y ccleaner
 choco install -y spotify
 choco install -y atom
 choco install -y slack
+choco install -y notepadplusplus
